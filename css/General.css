@@ -1,0 +1,114 @@
+/***************************/
+/* General components */
+/***************************/
+
+/***************************/
+/* General reusable component */
+/***************************/
+
+.container {
+  max-width: 120rem;
+  /* 대부분 1200px, 1140px임 */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /* padding 더하면 페이지가 양쪽 끝에서 공간 좀 남음 */
+}
+
+.grid {
+  /* reusable grid */
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary,
+.heading-secondary .heading-tertiary {
+  color: #333;
+  color: #45260a;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+.sub-heading {
+  display: block;
+  /* span은 inline이라 block으로 바꿔줘야 함 */
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e67e22;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 1px;
+}
+
+.btn:link,
+.btn:visited {
+  background-color: #e67e22;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  display: inline-block;
+  border-radius: 9px;
+  font-weight: 600;
+
+  transition: all 0.3s;
+  /* hover시 색 갑자기 변하는게 아니라 시간두고 변하게 함
+  all은 의미 잘 모르겠음 */
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+  /* 버튼사이 gap을 만들고 싶으면 여기서 margin-right하는 방법도 있지만 그건 나중에 버튼 쓸때도 마진만드므로 코드 더러워짐
+  
+  flexbox랑 grid로 갭 만드는방법도 가능
+  
+  별도로 class 만들어서 margin-right 하는 방법이 제일 간단함*/
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  color: #555;
+  /* border: 3px solid #fff; */
+  /* border더하면 hover시 border가 생기면서 공간을 더 차지하게됨. 그래서 box외부에 border가 생기는 걸 원하지 않아 border을 inside에 만드려면 box-shadow기능을 사용하면 매우 유용함 */
+  box-shadow: inset 0 0 0 3px #fff;
+  /* inset하면 shadow안쪽에 생기게 할 수 있다. 아쉽게도 border에는 안쪽에 border만드는 기능 없다. */
+}
