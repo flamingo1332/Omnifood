@@ -1,0 +1,233 @@
+/* 
+
+--- 01 typography system
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+    
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+font-weight:400
+
+line-heights
+default: 1
+
+----02 colors
+
+primary: #e67e22
+
+tints: #fdf2e9
+shades:
+accents:
+greys:#555
+
+
+--- pictures
+unsplash
+uifaces
+
+--- 05 shadows
+
+
+--- 06 border-radius
+
+
+---07 whitespace
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  /* 이렇게 해도 1rem=10px로 바뀌고 다른방법으로는
+  
+  font-size: 62.5% 하면 16*0.625 = 10 
+  이렇게 변경할 수도 있다.*/
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  font-family: "rubik", sans-serif;
+}
+
+/***************************/
+/* General components */
+/***************************/
+
+/***************************/
+/* General reusable component */
+/***************************/
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+.btn:link,
+.btn:visited {
+  background-color: #e67e22;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  display: inline-block;
+  border-radius: 9px;
+  font-weight: 600;
+
+  transition: all 0.3s;
+  /* hover시 색 갑자기 변하는게 아니라 시간두고 변하게 함
+  all은 의미 잘 모르겠음 */
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+  /* 버튼사이 gap을 만들고 싶으면 여기서 margin-right하는 방법도 있지만 그건 나중에 버튼 쓸때도 마진만드므로 코드 더러워짐
+  
+  flexbox랑 grid로 갭 만드는방법도 가능
+  
+  별도로 class 만들어서 margin-right 하는 방법이 제일 간단함*/
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  color: #555;
+  /* border: 3px solid #fff; */
+  /* border더하면 hover시 border가 생기면서 공간을 더 차지하게됨. 그래서 box외부에 border가 생기는 걸 원하지 않아 border을 inside에 만드려면 box-shadow기능을 사용하면 매우 유용함 */
+  box-shadow: inset 0 0 0 3px #fff;
+  /* inset하면 shadow안쪽에 생기게 할 수 있다. 아쉽게도 border에는 안쪽에 border만드는 기능 없다. */
+}
+
+/***************************/
+/*  Header */
+/***************************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* padding이 아니라 height를 정한 이유는 navigation을 sticky 하게 만들기 위해 = 스크롤 다운할때 위치 안변하게 하기 위해 */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+/***************************/
+/* Hero */
+/***************************/
+
+.test {
+  /* width: 1000px; */
+  /* max-width: 1000px; */
+  /* max-width의 기능은 min{1000px, 창 넓이}와 같다. 가용공간이 설정값보다 작아지면 그게 width가 된다. 즉 창 넓이가 한도임 */
+  padding: 100px;
+  background-color: red;
+
+  max-width: 50rem;
+
+  /* 1rem은 default로 16px이다. 그러므로 50rem이면 rem을 바꾸지 않았을 경우 800px 
+  rem으로 길이 다 설정하고 1rem당 px을 바꿔주면 사이트 크기를 일괄적으로 바꿔줄 수 있다.
+  root element인 html에서 font-size 바꿔주면 된다.
+  html{font-size:10px} 해주면 50rem이 500px됨.
+  */
+}
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  /* max width를 사용하여 만약 창 넓이가 1300px이하로 떨어지더라도 스크롤바 생기지 않고 그에 맞춰 이미지가 축소됨 */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /* 패딩 없으면 페이지 사이즈 줄일 때 창 옆에 착 달라붙음 공간없이 */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+  /* 이렇게 해도 이미지가 flexible하지않아 사이즈 조정 안됌 */
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem;
+  /* helper-class 이므로 재사용 안하는 것이 좋다. */
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  display: flex;
+  gap: -10px;
+  /* gap negative value 안먹힌다. */
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  /* margin은 negative value 먹힌다. */
+  border: 3px solid #fdf2e9;
+}
+.delivered-imgs img:last-child {
+  margin: 0;
+  /* 맨마지막 사진 -margin 있는거 텍스트랑 겹치게되기 때문에 margin 0으로 복구해준것 */
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
