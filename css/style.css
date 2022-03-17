@@ -105,8 +105,8 @@ body {
   line-height: 1.2;
 }
 
-.heading-tertiary {
-}
+/* .heading-tertiary {
+} */
 .sub-heading {
   display: block;
   /* span은 inline이라 block으로 바꿔줘야 함 */
@@ -519,3 +519,64 @@ body {
 /* **************** */
 /* testimonials */
 /* ******************* */
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  align-items: center;
+}
+
+.testimonial-container {
+  padding: 9.6rem;
+}
+.testimonials {
+  /* class= "grid, grid--2-cols" 이용하는 방법도 있지만 여기선 요소들이 작기 때문에 비효율적이다. 직접하는게 나음*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  /* 여기서 이미지는 고정된 사이즈가 맞다. %로하면 너무커짐. 배경이 아니기 떄문에 작은 사이즈 지정해주는게 맞음 */
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  /* 이렇게 하면 container밖으로 안나감. upscale되더라도   */
+}
+
+.gallery-item img {
+  display: block;
+  /* img는 원래 inline인데 이러면 이미지들 사이에 미세한 공간이 생기기 떄문에 block으로 바꿔줌 */
+
+  width: 100%;
+  /* 가용공간의 100% */
+  transition: all 0.3s;
+  /* container에 하는 게 더 낫다는데 일단은 hover에 해도 적용되긴 함 */
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}

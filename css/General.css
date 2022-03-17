@@ -122,7 +122,6 @@
   /* inset하면 shadow안쪽에 생기게 할 수 있다. 아쉽게도 border에는 안쪽에 border만드는 기능 없다. */
 }
 
-
 .link:visited,
 .link:link {
   color: #e67e22;
@@ -130,28 +129,26 @@
   border-bottom: 1px solid currentColor;
   /* current color 먹힘 */
 
-  display:inline-block
+  display: inline-block;
   padding-bottom: 2px;
   /* 밑줄border-bottom에 공간 좀 주기위해 padding추가
   근데 그냥은 추가 안되니 inline-block으로 바꿔줘야. 원래는 inline */
 }
 
 .link:hover,
-.link:active{
-  color:#cf711f;
+.link:active {
+  color: #cf711f;
   border-bottom: 1px solid transparent;
   transition: all 0.3s;
   /* border-bottom transparent하는 이유는 border없음으로 하면서 밑줄 없어지면 없어진 공간만큼 link가 차지하는 공간에 변화가 생겨 layout조금 변함. 옛날 원쳐진 page link 만들때랑 같은문제 발생함 */
-
 }
-
 
 /* *************************** */
 /* Helper classes */
 /* ************************** */
 strong {
   font-weight: 500;
-  letter-spacing: ;
+  /* letter-spacing: ; */
 }
 
 .margin-bottom-md {
@@ -163,6 +160,6 @@ strong {
   /* helper-class 이므로 재사용 안하는 것이 좋다. */
 }
 
-.container-meals{
-  text-align:center;
+.container-meals {
+  text-align: center;
 }
