@@ -672,3 +672,99 @@ body {
   font-size: 1.8rem;
   line-height: 1.8;
 }
+
+/* **************** */
+/* CTA */
+/* ******************* */
+
+.section-cta {
+  padding: 9.6rem 0;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #e67e22;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+.cta .heading-secondary {
+  color: #45260a;
+  margin-bottom: 3.2rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.3),
+      rgba(230, 125, 34, 0.308)
+    ),
+    url(../img/eating.jpg);
+  /* ..는 상위폴더로 하나 되돌아가는것 */
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+
+  /* 인풋은 font-family를 상속받지 않는다. 그러므로 따로 지정해주어야 한다. 
+  지정은 특정 폰트로 하는게 아니라 inherit으로 해주면 알아서 상속함
+  inherit 값은 여러 기능에서 먹힘*/
+  font-family: inherit;
+  color: inherit; /*color도 상속안하므로 지정해준다.*/
+
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+/* placeholder도 pseudo element로 특정가능 */
+
+.cta-form select {
+}
+.cta-form button {
+}
+/* 버튼도 btn class있지만 href가 안달려있어서 아무것도 적용안됨
+현재 general에 있는 btn관련 css는 link, hover 등 상태 다 달려있기 때문 */
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(250, 229, 220, 0.438);
+  /* cta는 바탕이 주황색이라 general에서 지정해준 focus관련 값이 적합하지 않다. 그래서 따로 지정해줌
+  cta의 전체(*)의 focus 상태 이렇게 지정해준 것 */
+}
