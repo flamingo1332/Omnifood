@@ -25,20 +25,22 @@
 </head>
 
 <body>
-  <main>
+  <a href="#">
     <header class="header">
       <img class="logo" alt="omnifood logo" src="img/omnifood-logo.png" />
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <!-- 보통 nav안에 ul를 넣어 만든다. 흔히사용하는 방법 -->
-          <li><a class="main-nav-link" href="#">section</a></li>
-          <li><a class="main-nav-link" href="#">section</a></li>
-          <li><a class="main-nav-link" href="#">section</a></li>
-          <li><a class="main-nav-link" href="#">section</a></li>
-          <li><a class="main-nav-link nav-cta" href="#">section</a></li>
-        </ul>
-      </nav>
-    </header>
+  </a>
+  <nav class="main-nav">
+    <ul class="main-nav-list">
+      <!-- 보통 nav안에 ul를 넣어 만든다. 흔히사용하는 방법 -->
+      <li><a class="main-nav-link" href="#">section</a></li>
+      <li><a class="main-nav-link" href="#">section</a></li>
+      <li><a class="main-nav-link" href="#">section</a></li>
+      <li><a class="main-nav-link" href="#">section</a></li>
+      <li><a class="main-nav-link nav-cta" href="#">section</a></li>
+    </ul>
+  </nav>
+  </header>
+  <main>
     <section class="section-hero">
       <div class="hero">
         <!-- section-hero를 냅두고 새로 div를 만든 이유는 css grid용으로 사용하기 위함. section을 display grid로 할 경우 fixed size container를 만들 수 없기 때문이다. -->
@@ -480,8 +482,69 @@
     </section>
   </main>
   <footer class="footer">
+    <div class="container grid grid--footer">
+      <div class="logo-col">
+        <a href="#" class="footer-logo">
+          <img class="logo" alt="omnifood logo" src="img/omnifood-logo.png" /></a>
+
+        <ul class="social-links">
+          <li><a href="#" class="footer-link">
+              <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+            </a></li>
+          <li><a href="#" class="footer-link">
+              <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+            </a></li>
+          <li><a href="#" class="footer-link">
+              <ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+            </a></li>
+
+        </ul>
 
 
+        <p class="copyright">Copyright&copy; 2027 by Omnifood, Inc. All rights deserved.</p>
+      </div>
+
+      <div class="address-col">
+        <p class="footer-heading">Contact us</p>
+        <address class="contacts">
+          <p class="address">Address: 623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
+          <p>
+            <a href="tel:415-201-6370" class="footer-link">415-201-6370</a>
+            <a href="mailto:hello@omnifood.com" class="footer-link">hello@omnifood.com</a>
+          </p>
+        </address>
+      </div>
+
+      <nav class="nav-col">
+        <p class="footer-heading">Account</p>
+        <ul class="footer-nav">
+          <li><a href="#" class="footer-link">Create Account</a></li>
+          <li><a href="#" class="footer-link">Sign in</a></li>
+          <li><a href="#" class="footer-link">ios app</a></li>
+          <li><a href="#" class="footer-link">Android app</a></li>
+
+        </ul>
+      </nav>
+      <nav class="nav-col">
+        <p class="footer-heading">Company</p>
+        <ul class="footer-nav">
+          <li><a href="#" class="footer-link">About Omnifood</a></li>
+          <li><a href="#" class="footer-link">For Business</a></li>
+          <li><a href="#" class="footer-link">COoking partners</a></li>
+          <li><a href="#" class="footer-link">Careers</a></li>
+
+        </ul>
+      </nav>
+      <nav class="nav-col">
+        <p class="footer-heading">Resources</p>
+        <ul class="footer-nav">
+          <li><a href="#" class="footer-link">Recipe directory</a></li>
+          <li><a href="#" class="footer-link">Help center</a></li>
+          <li><a href="#" class="footer-link">Privacy & terms</a></li>
+
+        </ul>
+      </nav>
+    </div>
 
 
   </footer>
